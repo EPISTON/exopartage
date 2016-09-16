@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class IndexAction extends ActionSupport {
+public class PhotoAction extends ActionSupport {
 	
 	private static Logger log = LogManager.getLogger(ActionSupport.class); 
 	private static final long serialVersionUID = 1L;
