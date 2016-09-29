@@ -6,6 +6,8 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:cxf="http://cxf.apache.org/jaxws"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
             http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
           http://www.springframework.org/schema/aop 
@@ -17,8 +19,30 @@
 			http://www.springframework.org/schema/tx
            http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
            http://www.springframework.org/schema/mvc
-			http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd"
+			http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+			http://cxf.apache.org/jaxws
+			http://cxf.apache.org/schemas/jaxws.xsd
+			http://www.springframework.org/schema/data/jpa
+			http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
 			default-autowire="byName">
+
+
+<!--  on expose un webservice que l'on fournit -->
+<!-- <cxf:endpoint id="wsProfilService"
+			  implementor="com.viollet.exo2userws.ws.WSProfilImp"
+			  address="/profil" />
+	-->	
+		  
+<!--  je veu consommer un service fournit par quelqu'un d'autre -->
+
+<!-- <cxf:client id="wsMeteoService"
+			serviceClass="ws2meteoprovider.WSMeteo"
+			address="http://localhost:8282/meteo" />
+ -->
+<jpa:repositories base-package="com.edugroupe.vdp.mesencheres.repositories" />
+<context:component-scan base-package="com.edugroupe.vdp.mesencheres.repositories,com.edugroupe.vdp.mesencheres.actions"></context:component-scan>
+
+
 
 <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
