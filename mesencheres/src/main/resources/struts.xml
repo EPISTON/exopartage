@@ -16,6 +16,38 @@
             <result name="success">/index.jsp</result>
         </action>
 
+		<action name="article/insert"
+				class="com.edugroupe.vdp.mesencheres.actions.ArticleAction"
+				method="insert">
+			<result name="success" type="json">
+				<param name="root">sucessOperation></param>
+			</result>
+		</action>
+
+		<action name="article/update"
+				class="com.edugroupe.vdp.mesencheres.actions.ArticleAction"
+				method="update">
+			<result name="success" type="json">
+				<param name="root">sucessOperation></param>
+			</result>
+		</action>
+		
+		<action name="article/delete"
+				class="com.edugroupe.vdp.mesencheres.actions.ArticleAction"
+				method="delete">
+			<result name="success" type="json">
+				<param name="root">sucessOperation></param>
+			</result>
+		</action>
+
+		<action name="article/show/*"
+				class="com.edugroupe.vdp.mesencheres.actions.ArticleAction"
+				method="show">
+				<param name="id">{1}</param>
+			<result name="success" type="json">
+				<param name="root">articles></param>
+			</result>
+		</action>
     </package>
 
     <!-- Add addition packages and configuration here. -->
